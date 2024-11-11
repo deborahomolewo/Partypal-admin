@@ -1,0 +1,24 @@
+/* src/pages/event/event.scss */
+
+.event {
+    display: flex;
+  }
+  
+  .eventContainer {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .eventContent {
+    padding: 20px;
+  }
+  
+  .section {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
