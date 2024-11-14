@@ -12,7 +12,9 @@ import Event from './pages/event/Event';
 import Planner from './pages/planner/Planner';
 import EventDetail from './components/eventDetails/EventDetails'; // Import EventDetail
 import { plannerInputs, userInputs } from "./formSource";
-import { events } from './data/events'; // Import events data
+import { events } from './data/events'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

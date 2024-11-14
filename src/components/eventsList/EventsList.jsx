@@ -1,5 +1,6 @@
 import React from 'react';
 import EventCard from '../../components/eventCard/EventCard';
+import { Tabs, Tab } from 'react-bootstrap';
 import './eventsList.scss';
 
 const EventsList = ({ events = [], onSelectEvent }) => {
@@ -28,40 +29,29 @@ const EventsList = ({ events = [], onSelectEvent }) => {
     return eventDate < today;
   });
 
+  const renderEvents = (eventList) => {
+    if (eventList.length === 0) {
+      return <p>No events</p>;
+    }
+    return eventList.map((event) => (
+      <EventCard key={event.id} event={event} onClick={() => onSelectEvent(event)} />
+    ));
+  };
+
   return (
     <div className="eventsList">
-      <h2>Upcoming Events</h2>
-      <div className="eventsSection">
-        {upcomingEvents.length > 0 ? (
-          upcomingEvents.map((event) => (
-            <EventCard key={event.id} event={event} onClick={() => onSelectEvent(event)} />
-          ))
-        ) : (
-          <p>No upcoming events</p>
-        )}
-      </div>
-
-      <h2>Ongoing Events</h2>
-      <div className="eventsSection">
-        {ongoingEvents.length > 0 ? (
-          ongoingEvents.map((event) => (
-            <EventCard key={event.id} event={event} onClick={() => onSelectEvent(event)} />
-          ))
-        ) : (
-          <p>No ongoing events</p>
-        )}
-      </div>
-
-      <h2>Completed Events</h2>
-      <div className="eventsSection">
-        {completedEvents.length > 0 ? (
-          completedEvents.map((event) => (
-            <EventCard key={event.id} event={event} onClick={() => onSelectEvent(event)} />
-          ))
-        ) : (
-          <p>No completed events</p>
-        )}
-      </div>
+      <h2>Events</h2>
+      <Tabs defaultActiveKey="upcoming" id="event-tabs" className="mb-3">
+        <Tab eventKey="upcoming" title="Upcoming Events">
+          <div className="eventsSection">{renderEvents(upcomingEvents)}</div>
+        </Tab>
+        <Tab eventKey="ongoing" title="Ongoing Events">
+          <div className="eventsSection">{renderEvents(ongoingEvents)}</div>
+        </Tab>
+        <Tab eventKey="completed" title="Completed Events">
+          <div className="eventsSection">{renderEvents(completedEvents)}</div>
+        </Tab>
+      </Tabs>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const Sidebar = () => {
                 </li>
                 </Link>
                 
-                <Link to="/plannner" style={{ textDecoration: "none", color:"black" }}>
+                <Link to="/planner" style={{ textDecoration: "none", color:"black" }}>
                 <li>
                     <PersonIcon className="icon"/>
                     <span>Planner</span>

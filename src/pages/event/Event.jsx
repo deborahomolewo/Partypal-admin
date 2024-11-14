@@ -13,7 +13,6 @@ const Event = () => {
       <div className="eventContainer">
         <Navbar />
         <div className="eventContent">
-          <h2>Events</h2>
           <EventsList events={events} />
         </div>
       </div>
