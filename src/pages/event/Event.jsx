@@ -1,10 +1,10 @@
+// src/pages/event/Event.jsx
 import React from 'react';
 import './event.scss';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Navbar from '../../components/navbar/Navbar';
-import EventDetails from '../../components/eventDetails/EventDetails';
-import Planners from '../../components/planners/Planners';
-import VendorDetails from '../../components/vendors/VendorDetails';
+import EventsList from '../../components/eventsList/EventsList';
+import { events } from '../../data/events';
 
 const Event = () => {
   return (
@@ -13,15 +13,8 @@ const Event = () => {
       <div className="eventContainer">
         <Navbar />
         <div className="eventContent">
-          <EventDetails />
-          <div className="section">
-            <h2>Planners</h2>
-            <Planners />
-          </div>
-          <div className="section">
-            <h2>Vendors</h2>
-            <VendorDetails />
-          </div>
+          <h2>Events</h2>
+          <EventsList events={events} />
         </div>
       </div>
     </div>
