@@ -1,59 +1,63 @@
-.widget{
+.widget {
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 20px; /* Increased padding */
     justify-content: space-between;
-    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-    border-radius: 10px;
-    height: 150px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    height: 200px; /* Slightly increased height */
+    background-color: #ffffff;
+    margin: 10px; /* Added margin to separate widgets */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 2px 6px 12px rgba(0, 0, 0, 0.15);
+    }
 
     .left, .right {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-
         .title {
             font-weight: bold;
-            font-size: 14px;
-            color: rgb(160, 160, 160)
+            font-size: 16px; /* Increased font size */
+            color: #666;
         }
 
         .counter {
-            font-size: 28px;
-            font-weight: 300;
+            font-size: 30px;
+            font-weight: 400;
+            color: #333;
         }
 
-        .link { 
+        .link {
             width: max-content;
-            font-size: 12px;
-            border-bottom: 1px solid gray;
+            font-size: 14px;
+            color: #007bff; /* Changed color for link */
+            border-bottom: 1px solid #007bff;
+            text-decoration: none;
         }
 
-        .percentage{
+        .percentage {
             display: flex;
             align-items: center;
             font-size: 14px;
 
-
-            &.positive{
-                color: green
+            &.positive {
+                color: #28a745; /* Green for positive */
             }
 
-            &.negative{
-                color: green
+            &.negative {
+                color: #dc3545; /* Red for negative */
             }
         }
-
-    .icon{
-        font-size: 18px;
-        padding: 5px;
-        align-self: flex-end;
-        border-radius: 5px;
     }
+
+    .icon {
+        font-size: 35px; /* Increased icon size */
+        padding: 8px;
+        align-self: flex-end;
     }
 }
-
-

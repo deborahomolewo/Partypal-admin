@@ -1,47 +1,51 @@
 .eventCard {
   background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
   cursor: pointer;
-  width: 280px;
-  transition: transform 0.3s ease;
-  
+  width: 300px; /* Consistent width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px; /* Added margin for spacing */
+
   &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.15);
   }
 
   .header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
 
-    .avatar {
-      margin-right: 10px;
-      color: #007bff;
-    }
+      .avatar {
+          font-size: 2rem;
+          margin-right: 15px;
+          color: #007bff;
+      }
 
-    .organizerName {
-      font-weight: bold;
-      color: #333;
-    }
+      .organizerName {
+          font-weight: bold;
+          color: #333;
+          font-size: 1.1rem;
+      }
   }
 
   .details {
-    display: flex;
-    justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
 
-    .left, .right {
-      p {
-        font-size: 0.9rem;
-        margin: 5px 0;
-        color: #555;
-        
-        strong {
-          color: #333;
-        }
+      .left, .right {
+          p {
+              font-size: 1rem;
+              margin: 10px 0;
+              color: #555;
+
+              strong {
+                  color: #333;
+                  font-size: 1rem;
+              }
+          }
       }
-    }
   }
 }
